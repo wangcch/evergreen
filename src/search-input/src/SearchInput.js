@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import Box, { splitWrapperProps } from 'ui-box'
-import { SearchIcon } from '../../icons'
-import { getIconSizeForControlHeight } from '../../shared-styles'
-import { TextInput } from '../../text-input'
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
+import Box, {splitWrapperProps} from 'ui-box';
+import {SearchIcon} from '../../icons';
+import {getIconSizeForControlHeight} from '../../shared-styles';
+import {TextInput} from '../../text-input';
 
 export default class SearchInput extends PureComponent {
   static propTypes = {
@@ -18,9 +18,10 @@ export default class SearchInput extends PureComponent {
   }
 
   render() {
-    const { appearance, iconProps, disabled, height, ...props } = this.props
-    const { matchedProps, restProps } = splitWrapperProps(props)
-    const iconSize = getIconSizeForControlHeight({ height })
+    const {appearance, iconProps, disabled, height, ...props} = this.props;
+    const {matchedProps, restProps} = splitWrapperProps(props);
+    const {width} = matchedProps;
+    const iconSize = getIconSizeForControlHeight({height});
 
     return (
       <Box
@@ -46,8 +47,9 @@ export default class SearchInput extends PureComponent {
           appearance={appearance}
           disable={disabled}
           {...restProps}
+          width={width}
         />
       </Box>
-    )
+    );
   }
 }

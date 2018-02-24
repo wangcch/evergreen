@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "arrify": "^1.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "dom-helpers": "^3.2.1",
     "downshift": "^1.16.0",
     "fuzzaldrin-plus": "^0.6.0",
@@ -67,8 +68,9 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-config-xo-react": "^0.14.0",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint-config-xo": "^0.20.1",
+    "eslint-config-xo-react": "^0.16.0",
+    "eslint-plugin-react": "^7.7.0",
     "execa": "^0.8.0",
     "file-loader": "^1.1.5",
     "fs-extra": "^4.0.3",
@@ -82,14 +84,19 @@
     "size-limit": "^0.14.0",
     "starwars-names": "^1.6.0",
     "url-loader": "^0.6.2",
-    "xo": "^0.18.2"
+    "xo": "^0.20.3"
   },
   "xo": {
+    "extends": "xo-react/space",
+    "space": 2,
+    "semicolon": false
+  },
+  "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": ["xo-react", "prettier", "prettier/react"],
-    "envs": ["browser"],
-    "space": true,
-    "semicolon": false,
+    "extends": ["prettier", "prettier/react", "xo", "xo-react/space"],
+    "env": {
+      "browser": true
+    },
     "rules": {
       "indent": ["off"],
       "react/jsx-indent-props": ["off"],
@@ -98,7 +105,7 @@
       "react/default-props-match-prop-types": ["off"],
       "react/forbid-component-props": ["off"],
       "react/jsx-no-bind": ["off"],
-      "unicorn/filename-case": ["off"]
+      "react/prop-types": []
     }
   },
   "prettier": {
@@ -106,7 +113,7 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "*.js": ["xo --fix", "prettier --write", "git add"],
+    "*.js": ["prettier --write", "eslint --fix", "git add"],
     "*.{json,md}": ["prettier --write", "git add"]
   },
   "ava": {
