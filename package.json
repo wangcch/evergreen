@@ -68,7 +68,9 @@
     "babel-register": "^6.26.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.2",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-config-xo": "^0.20.1",
     "eslint-config-xo-react": "^0.14.0",
     "eslint-plugin-react": "^7.5.1",
     "execa": "^0.8.0",
@@ -85,6 +87,10 @@
     "starwars-names": "^1.6.0",
     "url-loader": "^0.6.2",
     "xo": "^0.18.2"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": ["xo", "xo-react", "prettier", "prettier/react"]
   },
   "xo": {
     "parser": "babel-eslint",
