@@ -1296,7 +1296,7 @@ export declare const Menu: React.FC<MenuProps> & {
 }
 
 export interface PaneOwnProps {
-  background?: keyof Colors['background'] | string
+  background?: keyof Colors['background'] | (string & {})
   border?: boolean | string
   borderTop?: boolean | string
   borderRight?: boolean | string
@@ -1852,7 +1852,7 @@ export const StackingOrder: {
 
 export interface StatusIndicatorOwnProps extends TextOwnProps {
   disabled?: boolean
-  color?: IntentTypes | string
+  color?: IntentTypes | (string & {})
   dotSize?: number
 }
 
@@ -2325,7 +2325,7 @@ export declare const TextTableHeaderCell: BoxComponent<
 
 export type TextOwnProps = {
   size?: keyof Typography['text']
-  fontFamily?: FontFamily | string
+  fontFamily?: FontFamily | (string & {})
 }
 
 export type TextProps = PolymorphicBoxProps<'span', TextOwnProps>
